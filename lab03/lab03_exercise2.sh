@@ -34,7 +34,7 @@ ct=$(ps -ef | wc -l)
 
 # Compare the count to the number passed in ($1)
 if [ $ct -gt $1 ]; then
-        echo "Maximum number of processes exceeded"
+  echo "$(date) - Maximum number of processes exceeded" >> process_log.txt
 else
-        echo "The maximum number of processes NOT exceeded"
+  echo "$(date) - The maximum number of processes NOT exceeded" >> process_log.txt
 fi

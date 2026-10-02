@@ -32,9 +32,18 @@ echo "There are $ct processes running on this machine"
 # Count the running processes (ps -ef piped into wc -l)
 ct=$(ps -ef | wc -l)
 
-# Compare the count to the number passed in ($1)
 if [ $ct -gt $1 ]; then
-        echo "Maximum number of processes exceeded"
+  msg="Maximum number of processes exceeded"
 else
-        echo "The maximum number of processes NOT exceeded"
+  msg="The maximum number of processes NOT exceeded"
+fi
+
+# Show the message on screen or write it to the file
+if [ "$2" = "screen" ]; then
+  echo "$msg"
+elif [ "$2" = "file" ]; then
+  echo "$(date) - $msg" >> process_log.txt
+else
+  echo "The second option must be screen or file"
+  exit 1
 fi
