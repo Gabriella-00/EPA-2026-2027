@@ -10,5 +10,5 @@ Claude
 - "how can I change from a .txt file to a .sh file"
 - "how do I add date/time stamp into a log file"
 
-## Reflextion
+## Reflection
 In this lab I learned how to use if statements, pipes and >> in bash scripts. I learned that $1 and $2 let the user type in options when they run the script. I used Claude to help me with the scripts and to fix some problems I had, like the folder name and the file type. I ran each script with different inputs, including a wrong one, to check that it worked. Using >> showed me that new lines get added to the file and the old ones stay.
